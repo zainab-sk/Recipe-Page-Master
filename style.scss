@@ -1,0 +1,202 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+$primary-color:#000;
+$secondary-color:#333333;
+$tertiary-color:#BDBDBD;
+@mixin font-style($font-family,$font-size,$font-weight,$font-style,$color){
+    font-family: $font-family;
+    font-size: $font-size;
+    font-weight: $font-weight;
+    font-style: $font-style;
+    color:$color
+}
+@mixin background($background){
+    background: url($background);
+}
+.main{
+    &{
+        padding: 10px;
+    }
+    h1{
+        @include font-style('Playfair Display', 2rem, bold, normal,
+    #000);    
+    margin-top: 1rem;
+    margin-bottom: 0;
+    }
+    .description{
+        display: flex;
+        margin-top: 1rem;
+    }
+    span{
+    &:first-child{
+        display: block;
+            background: url("./6dots.svg");
+            width:20px;
+            height: 20px;
+            aspect-ratio: 1/1;
+            background-repeat: no-repeat;
+            background-size: 20px 20px;
+        }
+        &:nth-child(2) {
+                @include font-style('Montserrat', 1rem, 500, italic, #4F4F4F);
+                margin-left: 0.5rem;
+            }
+    }
+    .menu-image{
+        background: url("./photo1.png");
+        // background-repeat: no-repeat;
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        aspect-ratio:8/5;
+        width:100%;
+        margin-top: 1rem;
+        // height: 15rem;
+    }
+}
+.recipe{
+    padding: 10px;
+    .right{
+        .box{
+        display: flex;
+        flex-wrap: wrap;
+        }
+        .preptime,.cooktime,.total-time{
+            margin-top: 1rem;
+            flex-basis: 33.33%;
+        }
+            .preptime,
+            .cooktime,
+            .total-time,.yields{
+                display: flex;
+            }
+        .yields{
+            flex-basis: 100%;
+            .icon{
+                // background:url("./knife-and-spatchula.png");
+                @include background("./spoon-knife.png");
+                background-repeat: no-repeat;
+                width:7%;
+                aspect-ratio: 4/4;
+                background-size: 100% 100%;
+                margin-right: 0.4rem;
+                align-self: center        }
+        }
+        .cooktime,.preptime,.total-time{
+            .icon{
+    @include background("./clock.png");
+        background-repeat: no-repeat;
+        width: 20%;
+        // height:80%;
+        aspect-ratio: 8/8;
+        background-size: 100% 100%;
+        margin-right: 0.4rem;
+        align-self: center;
+        
+            }
+        }
+        .y-text{
+           align-self: center;
+        }
+    }
+    .left{
+       .ingredients,.instructions{
+        h2{
+            text-transform: capitalize;
+            @include font-style("Playfair Display", 1.5rem, 700,normal,$secondary-color );
+            margin:50px 0 1rem 0;
+        }
+        h3{
+            text-transform: capitalize;
+            @include font-style("Playfair Display", 1.1rem, 400, italic, $secondary-color);
+            margin-bottom: 1rem;
+        }
+       } 
+       .gcc-list,.cheescake-list,.instructions{
+        div{
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+            input[type="checkbox"]{
+               min-height: 20px;
+               min-width: 20px;
+               border-color: #828282;
+            }
+            button{
+                display: inline-block;
+                padding: 10px 15px;
+                text-align: center;
+                outline: 0;
+                background-color: #F2994A;
+                border:none;
+                border-radius: 5px;
+                @include font-style("PlayFair Display", 1.2rem, 700, normal, #ffffff);
+                
+            }
+            p{
+                @include font-style("Montserrat", 0.85rem,400, normal,$secondary-color );
+                margin-left: 0.5rem;
+                line-height: 25px;
+                span{
+                    font-weight: 700;
+                }
+            }
+        }
+       }
+    }
+}
+@media(min-width:767px){
+.main,.recipe{
+    padding: 0 150px;
+}
+.main{
+    span{
+        &:first-child{
+
+    }
+}
+    .menu-image{
+        aspect-ratio: 11/5;
+    }
+
+}
+.recipe{
+display: flex;
+flex-direction: row-reverse;
+justify-content: space-between;
+.left{
+    width: 60%;
+    .gcc-list,.cheescake-list,.instructions{
+       div{p {
+            font-size: 1rem;
+        }}
+    }
+}
+    .right{
+        flex-basis: 28%;
+        .yields,.preptime,.cooktime,.total-time{
+            justify-content:center;
+            margin: 2rem 0;
+            width: 100%;
+        }
+        .yields,.preptime,
+        .cooktime,
+        .total-time{
+            .icon{
+// aspect-ratio: ;
+                width:12%;
+            }
+
+        }
+        .box{
+                    margin-top: 50px;
+            display: block;    
+padding: 10px 0;
+box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+        }
+    }
+}
+}

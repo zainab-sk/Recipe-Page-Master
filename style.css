@@ -1,0 +1,182 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.main {
+  padding: 10px;
+}
+.main h1 {
+  font-family: "Playfair Display";
+  font-size: 2rem;
+  font-weight: bold;
+  font-style: normal;
+  color: #000;
+  margin-top: 1rem;
+  margin-bottom: 0;
+}
+.main .description {
+  display: flex;
+  margin-top: 1rem;
+}
+.main span:first-child {
+  display: block;
+  background: url("./6dots.svg");
+  width: 20px;
+  height: 20px;
+  aspect-ratio: 1/1;
+  background-repeat: no-repeat;
+  background-size: 20px 20px;
+}
+.main span:nth-child(2) {
+  font-family: "Montserrat";
+  font-size: 1rem;
+  font-weight: 500;
+  font-style: italic;
+  color: #4F4F4F;
+  margin-left: 0.5rem;
+}
+.main .menu-image {
+  background: url("./photo1.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  aspect-ratio: 8/5;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.recipe {
+  padding: 10px;
+}
+.recipe .right .box {
+  display: flex;
+  flex-wrap: wrap;
+}
+.recipe .right .preptime, .recipe .right .cooktime, .recipe .right .total-time {
+  margin-top: 1rem;
+  flex-basis: 33.33%;
+}
+.recipe .right .preptime,
+.recipe .right .cooktime,
+.recipe .right .total-time, .recipe .right .yields {
+  display: flex;
+}
+.recipe .right .yields {
+  flex-basis: 100%;
+}
+.recipe .right .yields .icon {
+  background: url("./spoon-knife.png");
+  background-repeat: no-repeat;
+  width: 7%;
+  aspect-ratio: 4/4;
+  background-size: 100% 100%;
+  margin-right: 0.4rem;
+  align-self: center;
+}
+.recipe .right .cooktime .icon, .recipe .right .preptime .icon, .recipe .right .total-time .icon {
+  background: url("./clock.png");
+  background-repeat: no-repeat;
+  width: 20%;
+  aspect-ratio: 8/8;
+  background-size: 100% 100%;
+  margin-right: 0.4rem;
+  align-self: center;
+}
+.recipe .right .y-text {
+  align-self: center;
+}
+.recipe .left .ingredients h2, .recipe .left .instructions h2 {
+  text-transform: capitalize;
+  font-family: "Playfair Display";
+  font-size: 1.5rem;
+  font-weight: 700;
+  font-style: normal;
+  color: #333333;
+  margin: 50px 0 1rem 0;
+}
+.recipe .left .ingredients h3, .recipe .left .instructions h3 {
+  text-transform: capitalize;
+  font-family: "Playfair Display";
+  font-size: 1.1rem;
+  font-weight: 400;
+  font-style: italic;
+  color: #333333;
+  margin-bottom: 1rem;
+}
+.recipe .left .gcc-list div, .recipe .left .cheescake-list div, .recipe .left .instructions div {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+.recipe .left .gcc-list div input[type=checkbox], .recipe .left .cheescake-list div input[type=checkbox], .recipe .left .instructions div input[type=checkbox] {
+  min-height: 20px;
+  min-width: 20px;
+  border-color: #828282;
+}
+.recipe .left .gcc-list div button, .recipe .left .cheescake-list div button, .recipe .left .instructions div button {
+  display: inline-block;
+  padding: 10px 15px;
+  text-align: center;
+  outline: 0;
+  background-color: #F2994A;
+  border: none;
+  border-radius: 5px;
+  font-family: "PlayFair Display";
+  font-size: 1.2rem;
+  font-weight: 700;
+  font-style: normal;
+  color: #ffffff;
+}
+.recipe .left .gcc-list div p, .recipe .left .cheescake-list div p, .recipe .left .instructions div p {
+  font-family: "Montserrat";
+  font-size: 0.85rem;
+  font-weight: 400;
+  font-style: normal;
+  color: #333333;
+  margin-left: 0.5rem;
+  line-height: 25px;
+}
+.recipe .left .gcc-list div p span, .recipe .left .cheescake-list div p span, .recipe .left .instructions div p span {
+  font-weight: 700;
+}
+
+@media (min-width: 767px) {
+  .main, .recipe {
+    padding: 0 150px;
+  }
+  .main .menu-image {
+    aspect-ratio: 11/5;
+  }
+  .recipe {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+  }
+  .recipe .left {
+    width: 60%;
+  }
+  .recipe .left .gcc-list div p, .recipe .left .cheescake-list div p, .recipe .left .instructions div p {
+    font-size: 1rem;
+  }
+  .recipe .right {
+    flex-basis: 28%;
+  }
+  .recipe .right .yields, .recipe .right .preptime, .recipe .right .cooktime, .recipe .right .total-time {
+    justify-content: center;
+    margin: 2rem 0;
+    width: 100%;
+  }
+  .recipe .right .yields .icon, .recipe .right .preptime .icon,
+.recipe .right .cooktime .icon,
+.recipe .right .total-time .icon {
+    width: 12%;
+  }
+  .recipe .right .box {
+    margin-top: 50px;
+    display: block;
+    padding: 10px 0;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+  }
+}/*# sourceMappingURL=style.css.map */
